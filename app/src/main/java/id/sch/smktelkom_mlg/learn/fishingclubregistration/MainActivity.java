@@ -7,14 +7,16 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
     RadioButton rbB, rbA, rbP;
     EditText etName;
-    TextView tvHasilName, tvHasilExp, tvHasilRod;
+    TextView tvHasilName, tvHasilExp, tvHasilRod, tvHasilBait;
     CheckBox cbS, cbI, cbF;
+    Spinner spBait;
     Button bOk;
 
     @Override
@@ -28,9 +30,11 @@ public class MainActivity extends AppCompatActivity {
         cbI = (CheckBox) findViewById(R.id.cbI);
         cbF = (CheckBox) findViewById(R.id.cbF);
         etName = (EditText) findViewById(R.id.etName);
+        spBait = (Spinner) findViewById(R.id.spBait);
         tvHasilName = (TextView) findViewById(R.id.tvHasilName);
         tvHasilExp = (TextView) findViewById(R.id.tvHasilExp);
         tvHasilRod = (TextView) findViewById(R.id.tvHasilRod);
+        tvHasilBait = (TextView) findViewById(R.id.tvHasilBait);
         bOk = (Button) findViewById(R.id.bOk);
 
 
@@ -40,10 +44,15 @@ public class MainActivity extends AppCompatActivity {
                 doName();
                 doExp();
                 doRod();
+                doBait();
             }
 
         });
 
+    }
+
+    private void doBait() {
+        tvHasilBait.setText("Your favourite bait is " + spBait.getSelectedItem().toString());
     }
 
     private void doRod() {
@@ -51,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         int startlen = hasil.length();
         if (cbS.isChecked()) hasil += cbS.getText() + "\n";
         if (cbI.isChecked()) hasil += cbI.getText() + "\n";
-        if (cbF.isChecked()) hasil += cbF.getText() + "\n";
+        if (cbF.isChecked()) hasil += cbF.getText();
 
         if (hasil.length() == startlen) hasil += "You doesn't choose any option ";
 
