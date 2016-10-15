@@ -30,7 +30,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/editTextName"
+                android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3.63"
@@ -49,7 +49,7 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="3.63"
             android:text="Your fishing experience"
             android:textAppearance="@android:style/TextAppearance.Material.Medium" />
@@ -136,18 +136,18 @@
             android:entries="@array/bait" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/bOk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="3.63"
-            android:text="Button" />
+            android:text="SUBMIT" />
 
         <TextView
-            android:id="@+id/textView99"
+            android:id="@+id/tv90"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="3.63"
-            android:text="TextView"
+            android:text="Your Result"
             android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
         <TextView
