@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     RadioButton rbB, rbA, rbP;
     EditText etName;
-    TextView tvHasilName, tvHasilExp, tvHasilRod
+    TextView tvHasilName, tvHasilExp, tvHasilRod;
     CheckBox cbS, cbI, cbF;
     Button bOk;
 
@@ -47,10 +47,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void doRod() {
-        if (isValid()) {
-            String name = etName.getText().toString();
-            tvHasilName.setText("Your name is " + name);
-        }
+        String hasil = "Your Favourite Rod : \n";
+        int startlen = hasil.length();
+        if (cbS.isChecked()) hasil += cbS.getText() + "\n";
+        if (cbI.isChecked()) hasil += cbI.getText() + "\n";
+        if (cbF.isChecked()) hasil += cbF.getText() + "\n";
+
+        if (hasil.length() == startlen) hasil += "You doesn't choose any option ";
+
+        tvHasilRod.setText(hasil);
     }
 
     private void doExp() {
